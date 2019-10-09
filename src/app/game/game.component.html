@@ -1,0 +1,33 @@
+<div class="board">
+  <div id="tl" class="tldarkmode" (click)="fill(1)">{{ valtl }}</div>
+  <div id="t" class="tdarkmode" (click)="fill(2)">{{ valt }}</div>
+  <div id="tr" class="trdarkmode" (click)="fill(3)">{{ valtr }}</div>
+  <div id="cl" class="cldarkmode" (click)="fill(4)">{{ valcl }}</div>
+  <div id="c" class="cdarkmode" (click)="fill(5)">{{ valc }}</div>
+  <div id="cr" class="crdarkmode" (click)="fill(6)">{{ valcr }}</div>
+  <div id="bl" class="bldarkmode" (click)="fill(7)">{{ valbl }}</div>
+  <div id="b" class="bdarkmode" (click)="fill(8)">{{ valb }}</div>
+  <div id="br" class="brdarkmode" (click)="fill(9)">{{ valbr }}</div>
+</div>
+<div id="turnmsg">
+  {{ msg }}
+</div>
+
+<button
+  id="button"
+  type="button"
+  name="dark_light"
+  (click)="toggleDarkLight()"
+  title="Toggle theme"
+  style="position: absolute; top:15px; right: 3%; width: 70.93px"
+>
+  {{ buttonvalue }}
+</button>
+
+<input
+  class="newgamebutton"
+  type="button"
+  value="New Game"
+  (click)="newgame()"
+  title="Start a new game"
+/>

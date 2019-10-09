@@ -1,0 +1,213 @@
+$darkbackground-color: black;
+$darkcolor: white;
+$darkborder: solid white 4px;
+$darkborder-left: solid white 4px;
+$darkborder-right: solid white 4px;
+$darkborder-bottom: solid white 4px;
+
+$lightbackground-color: white;
+$lightcolor: black;
+$lightborder: solid black 4px;
+$lightborder-left: solid black 4px;
+$lightborder-right: solid black 4px;
+$lightborder-bottom: solid black 4px;
+
+.board {
+  cursor: pointer;
+  background-color: inherit;
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 0px solid white;
+}
+
+#tl {
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.tldarkmode {
+  border-right: $darkborder-right;
+  border-bottom: $darkborder-bottom;
+}
+
+.tllightmode {
+  border-right: $lightborder-right;
+  border-bottom: $lightborder-bottom;
+}
+
+#t {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 200px;
+  top: 0px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+#tr {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 404px;
+  top: 0px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.trdarkmode {
+  border-left: $darkborder-left;
+  border-bottom: $darkborder-bottom;
+}
+
+.trlightmode {
+  border-left: $lightborder-left;
+  border-bottom: $lightborder-bottom;
+}
+
+#cl {
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.cldarkmode {
+  border-right: $darkborder-right;
+  border-bottom: $darkborder-bottom;
+}
+
+.cllightmode {
+  border-right: $lightborder-right;
+  border-bottom: $lightborder-bottom;
+}
+
+#c {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.cdarkmode {
+  border: $darkborder;
+}
+
+.clightmode {
+  border: $lightborder;
+}
+
+#cr {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 404px;
+  top: 204px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.crdarkmode {
+  border-bottom: $darkborder-bottom;
+}
+
+.crlightmode {
+  border-bottom: $lightborder-bottom;
+}
+
+#bl {
+  height: 200px;
+  width: 200px;
+  font-size: 200px;
+  text-align: center;
+}
+
+#b {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 200px;
+  top: 400px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.bdarkmode {
+  border-left: $darkborder-left;
+}
+
+.blightmode {
+  border-left: $lightborder-left;
+}
+
+#br {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 404px;
+  top: 400px;
+  border-radius: 4px;
+  font-size: 200px;
+  text-align: center;
+}
+
+.brdarkmode {
+  border-left: $darkborder-left;
+}
+
+.brlightmode {
+  border-left: $lightborder-left;
+}
+
+#turnmsg {
+  position: absolute;
+  top: 150px;
+  right: 3%;
+  font-size: 40px;
+}
+
+.newgamebutton {
+  position: absolute;
+  top: 80px;
+  right: 3%;
+  height: 1px;
+  width: 174px;
+  border-radius: 13px;
+  border: solid #000000 1px;
+  padding: 27px;
+  line-height: 1px;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: 100;
+  background-color: dodgerblue;
+  color: #ffffff;
+  // box-shadow: 1px 1px 20px 0px black;
+  text-shadow: 1px 1px 20px black;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+}
+
+.newgamebutton:hover {
+  background-image: linear-gradient(to bottom, #0052cc, #4c00e6);
+  text-decoration: none;
+}

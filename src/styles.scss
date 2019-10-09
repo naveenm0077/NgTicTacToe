@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+$darkbackground-color: black;
+$darkcolor: white;
+$darkborder: solid white 4px;
+$darkborder-left: solid white 4px;
+$darkborder-right: solid white 4px;
+$darkborder-bottom: solid white 4px;
+
+body.dark-mode {
+  user-select: none;
+  font-family: sans-serif;
+  background-color: $darkbackground-color;
+  color: $darkcolor;
+  button {
+    cursor: pointer;
+    outline: none;
+    background-color: white;
+    color: black;
+    font-size: 40px;
+  }
+}
+
+$lightbackground-color: white;
+$lightcolor: black;
+$lightborder: solid black 4px;
+$lightborder-left: solid black 4px;
+$lightborder-right: solid black 4px;
+$lightborder-bottom: solid black 4px;
+
+body.light-mode {
+  user-select: none;
+  font-family: sans-serif;
+  background-color: $lightbackground-color;
+  color: $lightcolor;
+  button {
+    cursor: pointer;
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+  }
+}
