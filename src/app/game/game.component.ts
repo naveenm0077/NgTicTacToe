@@ -13,6 +13,7 @@ export class GameComponent implements OnInit {
   public count: number = 0;
   public msg: string = "";
   public buttonvalue = "🌞";
+  public winflag: number = -1;
 
   public valtl: string = "";
   public valt: string = "";
@@ -27,8 +28,7 @@ export class GameComponent implements OnInit {
   fill(cell: number) {
     if (cell == 1) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valtl == "") {
             this.valtl = "X";
             this.turn = this.turn + 1;
@@ -36,8 +36,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valtl == "") {
             this.valtl = "O";
             this.turn = this.turn - 1;
@@ -45,13 +44,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 2) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valt == "") {
             this.valt = "X";
             this.turn = this.turn + 1;
@@ -59,8 +59,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valt == "") {
             this.valt = "O";
             this.turn = this.turn - 1;
@@ -68,13 +67,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 3) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valtr == "") {
             this.valtr = "X";
             this.turn = this.turn + 1;
@@ -82,8 +82,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valtr == "") {
             this.valtr = "O";
             this.turn = this.turn - 1;
@@ -91,13 +90,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 4) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valcl == "") {
             this.valcl = "X";
             this.turn = this.turn + 1;
@@ -105,8 +105,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valcl == "") {
             this.valcl = "O";
             this.turn = this.turn - 1;
@@ -114,13 +113,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 5) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valc == "") {
             this.valc = "X";
             this.turn = this.turn + 1;
@@ -128,8 +128,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valc == "") {
             this.valc = "O";
             this.turn = this.turn - 1;
@@ -137,13 +136,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 6) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valcr == "") {
             this.valcr = "X";
             this.turn = this.turn + 1;
@@ -151,8 +151,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valcr == "") {
             this.valcr = "O";
             this.turn = this.turn - 1;
@@ -160,13 +159,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 7) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valbl == "") {
             this.valbl = "X";
             this.turn = this.turn + 1;
@@ -174,8 +174,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valbl == "") {
             this.valbl = "O";
             this.turn = this.turn - 1;
@@ -183,13 +182,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 8) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valb == "") {
             this.valb = "X";
             this.turn = this.turn + 1;
@@ -197,8 +197,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valb == "") {
             this.valb = "O";
             this.turn = this.turn - 1;
@@ -206,13 +205,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
     if (cell == 9) {
       if (this.turn == 1) {
-        var winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valbr == "") {
             this.valbr = "X";
             this.turn = this.turn + 1;
@@ -220,8 +220,7 @@ export class GameComponent implements OnInit {
           }
         }
       } else {
-        winflag = this.checkwin();
-        if (winflag !== 1 || 2) {
+        if (this.winflag == -1) {
           if (this.valbr == "") {
             this.valbr = "O";
             this.turn = this.turn - 1;
@@ -229,14 +228,14 @@ export class GameComponent implements OnInit {
           }
         }
       }
-      this.count = this.count + 1;
+      if (this.winflag == -1) {
+        this.count = this.count + 1;
+      }
       this.checkwin();
     }
   }
 
   checkwin() {
-    var winner: number = -1;
-
     if (
       (this.valtl == "X" && this.valt == "X" && this.valtr == "X") ||
       (this.valcl == "X" && this.valc == "X" && this.valcr == "X") ||
@@ -248,11 +247,11 @@ export class GameComponent implements OnInit {
       (this.valtr == "X" && this.valc == "X" && this.valbl == "X")
     ) {
       this.msg = "Player X wins";
-      winner = 1;
-      return winner;
+      this.winflag = 1;
     } else if (this.count == 9) {
       //alert("It's a draw"!);
       this.msg = "It's a Draw";
+      this.winflag = 0;
     } else if (
       (this.valtl == "O" && this.valt == "O" && this.valtr == "O") ||
       (this.valcl == "O" && this.valc == "O" && this.valcr == "O") ||
@@ -264,8 +263,7 @@ export class GameComponent implements OnInit {
       (this.valtr == "O" && this.valc == "O" && this.valbl == "O")
     ) {
       this.msg = "Player O wins";
-      winner = 2;
-      return winner;
+      this.winflag = 2;
     }
   }
 
@@ -282,6 +280,7 @@ export class GameComponent implements OnInit {
     this.valbl = "";
     this.valb = "";
     this.valbr = "";
+    this.winflag = -1;
   }
 
   toggleDarkLight() {
