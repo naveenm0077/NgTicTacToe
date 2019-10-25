@@ -7,6 +7,7 @@ $darkborder-bottom: solid white 4px;
 
 body.dark-mode {
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
   font-family: sans-serif;
   background-color: $darkbackground-color;
   color: $darkcolor;
@@ -28,6 +29,7 @@ $lightborder-bottom: solid black 4px;
 
 body.light-mode {
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
   font-family: sans-serif;
   background-color: $lightbackground-color;
   color: $lightcolor;
