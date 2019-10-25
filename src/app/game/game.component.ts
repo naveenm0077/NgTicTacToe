@@ -11,9 +11,10 @@ export class GameComponent implements OnInit {
 
   public turn: number = 1;
   public count: number = 0;
+  public winflag: number = -1;
+
   public msg: string = "";
   public buttonvalue = "🌞";
-  public winflag: number = -1;
 
   public valtl: string = "";
   public valt: string = "";
@@ -33,6 +34,7 @@ export class GameComponent implements OnInit {
             this.valtl = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -41,11 +43,9 @@ export class GameComponent implements OnInit {
             this.valtl = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -56,6 +56,7 @@ export class GameComponent implements OnInit {
             this.valt = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -64,11 +65,9 @@ export class GameComponent implements OnInit {
             this.valt = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -79,6 +78,7 @@ export class GameComponent implements OnInit {
             this.valtr = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -87,11 +87,9 @@ export class GameComponent implements OnInit {
             this.valtr = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -102,6 +100,7 @@ export class GameComponent implements OnInit {
             this.valcl = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -110,11 +109,9 @@ export class GameComponent implements OnInit {
             this.valcl = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -125,6 +122,7 @@ export class GameComponent implements OnInit {
             this.valc = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -133,11 +131,9 @@ export class GameComponent implements OnInit {
             this.valc = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -148,6 +144,7 @@ export class GameComponent implements OnInit {
             this.valcr = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -156,11 +153,9 @@ export class GameComponent implements OnInit {
             this.valcr = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -171,6 +166,7 @@ export class GameComponent implements OnInit {
             this.valbl = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -179,11 +175,9 @@ export class GameComponent implements OnInit {
             this.valbl = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -194,6 +188,7 @@ export class GameComponent implements OnInit {
             this.valb = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -202,11 +197,9 @@ export class GameComponent implements OnInit {
             this.valb = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
-      }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
       }
       this.checkwin();
     }
@@ -217,6 +210,7 @@ export class GameComponent implements OnInit {
             this.valbr = "X";
             this.turn = this.turn + 1;
             this.msg = "Player O's turn";
+            this.incrementcount();
           }
         }
       } else {
@@ -225,13 +219,17 @@ export class GameComponent implements OnInit {
             this.valbr = "O";
             this.turn = this.turn - 1;
             this.msg = "Player X's turn";
+            this.incrementcount();
           }
         }
       }
-      if (this.winflag == -1) {
-        this.count = this.count + 1;
-      }
       this.checkwin();
+    }
+  }
+
+  incrementcount() {
+    if (this.winflag == -1) {
+      this.count = this.count + 1;
     }
   }
 
