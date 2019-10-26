@@ -26,6 +26,11 @@ export class GameComponent implements OnInit {
   public valb: string = "";
   public valbr: string = "";
 
+  public xscore: number = 0;
+  public tiescore: number = 0;
+  public oscore: number = 0;
+  public scoreflag: number = 0;
+
   fill(cell: number) {
     if (cell == 1) {
       if (this.turn == 1) {
@@ -246,10 +251,13 @@ export class GameComponent implements OnInit {
     ) {
       this.msg = "Player X wins";
       this.winflag = 1;
+      this.scoreflag = this.scoreflag + 1;
+      if (this.scoreflag == 1) this.updatescore();
     } else if (this.count == 9) {
-      //alert("It's a draw"!);
       this.msg = "It's a Draw";
       this.winflag = 0;
+      this.scoreflag = this.scoreflag + 1;
+      if (this.scoreflag == 1) this.updatescore();
     } else if (
       (this.valtl == "O" && this.valt == "O" && this.valtr == "O") ||
       (this.valcl == "O" && this.valc == "O" && this.valcr == "O") ||
@@ -262,7 +270,17 @@ export class GameComponent implements OnInit {
     ) {
       this.msg = "Player O wins";
       this.winflag = 2;
+      this.scoreflag = this.scoreflag + 1;
+      if (this.scoreflag == 1) this.updatescore();
     }
+  }
+
+  updatescore() {
+    if (this.winflag == 1) {
+      this.xscore = this.xscore + 1;
+    } else if (this.winflag == 2) this.oscore = this.oscore + 1;
+    else if (this.winflag == 0) this.tiescore = this.tiescore + 1;
+    else return;
   }
 
   newgame() {
@@ -279,6 +297,7 @@ export class GameComponent implements OnInit {
     this.valb = "";
     this.valbr = "";
     this.winflag = -1;
+    this.scoreflag = 0;
   }
 
   toggleDarkLight() {
