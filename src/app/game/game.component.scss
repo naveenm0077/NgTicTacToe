@@ -211,3 +211,31 @@ $lightborder-bottom: solid black 4px;
   background-image: linear-gradient(to bottom, #0052cc, #4c00e6);
   text-decoration: none;
 }
+
+@media screen and (max-width: 400px) {
+  body {
+    height: 100%;
+  }
+  .board {
+    top: 250px;
+    position: relative;
+  }
+  #button {
+    position: absolute;
+    left: 560px;
+    width: 450px;
+  }
+
+  #turnmsg {
+    position: absolute;
+    text-align: center;
+  }
+
+  .newgamebutton {
+    position: absolute;
+    top: 950px;
+    height: 8px;
+    width: 274px;
+    left: 175px;
+  }
+}
