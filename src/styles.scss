@@ -1,14 +1,11 @@
-$darkbackground-color: black;
+$darkBG: black;
 $darkcolor: white;
 $darkborder: solid white 4px;
-$darkborder-left: solid white 4px;
-$darkborder-right: solid white 4px;
-$darkborder-bottom: solid white 4px;
 
-body.dark-mode {
+body.darkmode {
   user-select: none;
   font-family: sans-serif;
-  background-color: $darkbackground-color;
+  background-color: $darkBG;
   color: $darkcolor;
   button {
     cursor: pointer;
@@ -19,17 +16,14 @@ body.dark-mode {
   }
 }
 
-$lightbackground-color: white;
-$lightcolor: black;
-$lightborder: solid black 4px;
-$lightborder-left: solid black 4px;
-$lightborder-right: solid black 4px;
-$lightborder-bottom: solid black 4px;
+$lightBG: black;
+$lightcolor: white;
+$lightborder: solid white 4px;
 
-body.light-mode {
+body.lightmode {
   user-select: none;
   font-family: sans-serif;
-  background-color: $lightbackground-color;
+  background-color: $lightBG;
   color: $lightcolor;
   button {
     cursor: pointer;

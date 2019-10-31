@@ -1,16 +1,5 @@
-$darkbackground-color: black;
-$darkcolor: white;
-$darkborder: solid white 4px;
-$darkborder-left: solid white 4px;
-$darkborder-right: solid white 4px;
-$darkborder-bottom: solid white 4px;
-
-$lightbackground-color: white;
-$lightcolor: black;
-$lightborder: solid black 4px;
-$lightborder-left: solid black 4px;
-$lightborder-right: solid black 4px;
-$lightborder-bottom: solid black 4px;
+$darkborder: white;
+$lightborder: black;
 
 .board {
   cursor: pointer;
@@ -26,7 +15,7 @@ $lightborder-bottom: solid black 4px;
   border: 0px solid white;
 }
 
-#tl {
+.cellclass {
   height: 200px;
   width: 200px;
   border-radius: 4px;
@@ -34,147 +23,60 @@ $lightborder-bottom: solid black 4px;
   text-align: center;
 }
 
-.tldarkmode {
-  border-right: $darkborder-right;
-  border-bottom: $darkborder-bottom;
-}
-
-.tllightmode {
-  border-right: $lightborder-right;
-  border-bottom: $lightborder-bottom;
+#tl {
+  border-right: solid 4px;
+  border-bottom: solid 4px;
 }
 
 #t {
-  height: 200px;
-  width: 200px;
   position: absolute;
-  left: 200px;
   top: 0px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
+  left: 200px;
 }
 
 #tr {
-  height: 200px;
-  width: 200px;
   position: absolute;
-  left: 404px;
   top: 0px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
-}
-
-.trdarkmode {
-  border-left: $darkborder-left;
-  border-bottom: $darkborder-bottom;
-}
-
-.trlightmode {
-  border-left: $lightborder-left;
-  border-bottom: $lightborder-bottom;
+  left: 404px;
+  border-left: solid 4px;
+  border-bottom: solid 4px;
 }
 
 #cl {
-  height: 200px;
-  width: 200px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
-}
-
-.cldarkmode {
-  border-right: $darkborder-right;
-  border-bottom: $darkborder-bottom;
-}
-
-.cllightmode {
-  border-right: $lightborder-right;
-  border-bottom: $lightborder-bottom;
+  border-right: solid 4px;
+  border-bottom: solid 4px;
 }
 
 #c {
-  height: 200px;
-  width: 200px;
   position: absolute;
-  left: 200px;
   top: 200px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
-}
-
-.cdarkmode {
-  border: $darkborder;
-}
-
-.clightmode {
-  border: $lightborder;
+  left: 200px;
+  border: solid 4px;
 }
 
 #cr {
-  height: 200px;
-  width: 200px;
   position: absolute;
-  left: 404px;
   top: 204px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
-}
-
-.crdarkmode {
-  border-bottom: $darkborder-bottom;
-}
-
-.crlightmode {
-  border-bottom: $lightborder-bottom;
+  left: 404px;
+  border-bottom: solid 4px;
 }
 
 #bl {
-  height: 200px;
-  width: 200px;
-  font-size: 200px;
   text-align: center;
 }
 
 #b {
-  height: 200px;
-  width: 200px;
   position: absolute;
-  left: 200px;
   top: 400px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
-}
-
-.bdarkmode {
-  border-left: $darkborder-left;
-}
-
-.blightmode {
-  border-left: $lightborder-left;
+  left: 200px;
+  border-left: solid 4px;
 }
 
 #br {
-  height: 200px;
-  width: 200px;
   position: absolute;
-  left: 404px;
   top: 400px;
-  border-radius: 4px;
-  font-size: 200px;
-  text-align: center;
-}
-
-.brdarkmode {
-  border-left: $darkborder-left;
-}
-
-.brlightmode {
-  border-left: $lightborder-left;
+  left: 404px;
+  border-left: solid 4px;
 }
 
 #turnmsg {
