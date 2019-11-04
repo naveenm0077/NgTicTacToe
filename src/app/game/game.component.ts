@@ -9,6 +9,8 @@ export class GameComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
 
+  public spam: any;
+
   public turn: number = 1;
   public count: number = 0;
   public winflag: number = -1;
@@ -21,9 +23,69 @@ export class GameComponent implements OnInit {
   public oscore: number = 0;
   public scoreflag: number = 0;
 
-  public board = ["", "", "", "", "", "", "", "", ""];
+  public board: any = ["", "", "", "", "", "", "", "", ""];
 
-  fill(cell: number) {
+  public singleplayer: number = 0;
+  public cellsleft = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+  mode(e: any) {
+    if (e.target.checked) {
+      this.singleplayer = 1;
+      this.scoreflag = 0;
+      this.xscore = 0;
+      this.oscore = 0;
+      this.tiescore = 0;
+      this.newgame();
+    } else {
+      this.singleplayer = 0;
+      this.scoreflag = 0;
+      this.xscore = 0;
+      this.oscore = 0;
+      this.tiescore = 0;
+      this.newgame();
+    }
+  }
+
+  controller(cell: number) {
+    if (this.singleplayer == 0) this.filltwo(cell);
+    else this.fillone(cell);
+  }
+
+  fillone(cell: number) {
+    if (this.turn == 1 && this.winflag == -1 && this.board[cell] == "") {
+      this.board[cell] = "X";
+      this.turn = this.turn + 1;
+      this.msg = "Player O's turn";
+      this.incrementcount();
+      this.filltwocomp(cell);
+      this.checkwin();
+    }
+  }
+
+  filltwocomp(cell: number) {
+    for (var i = 0; i < this.cellsleft.length; i++) {
+      if (this.cellsleft[i] === cell) {
+        this.cellsleft.splice(i, 1);
+      }
+    }
+
+    var compcell = this.cellsleft[(Math.random() * this.cellsleft.length) | 0];
+
+    for (var i = 0; i < this.cellsleft.length; i++) {
+      if (this.cellsleft[i] === compcell) {
+        this.cellsleft.splice(i, 1);
+      }
+    }
+
+    this.spam = compcell;
+    this.board[compcell] = "O";
+    this.msg = "Player X's turn";
+    this.turn = this.turn - 1;
+    this.incrementcount();
+    this.checkwin();
+  }
+
+  filltwo(cell: number) {
     if (this.turn == 1 && this.winflag == -1 && this.board[cell] == "") {
       this.board[cell] = "X";
       this.turn = this.turn + 1;
@@ -96,6 +158,8 @@ export class GameComponent implements OnInit {
       "";
     this.winflag = -1;
     this.scoreflag = 0;
+
+    this.cellsleft = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   }
 
   toggleDarkLight() {

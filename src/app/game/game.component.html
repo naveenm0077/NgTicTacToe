@@ -1,13 +1,13 @@
 <div class="board">
-  <div id="tl" class="tldarkmode" (click)="fill(0)">{{ board[0] }}</div>
-  <div id="t" class="tdarkmode" (click)="fill(1)">{{ board[1] }}</div>
-  <div id="tr" class="trdarkmode" (click)="fill(2)">{{ board[2] }}</div>
-  <div id="cl" class="cldarkmode" (click)="fill(3)">{{ board[3] }}</div>
-  <div id="c" class="cdarkmode" (click)="fill(4)">{{ board[4] }}</div>
-  <div id="cr" class="crdarkmode" (click)="fill(5)">{{ board[5] }}</div>
-  <div id="bl" class="bldarkmode" (click)="fill(6)">{{ board[6] }}</div>
-  <div id="b" class="bdarkmode" (click)="fill(7)">{{ board[7] }}</div>
-  <div id="br" class="brdarkmode" (click)="fill(8)">{{ board[8] }}</div>
+  <div id="tl" class="tldarkmode" (click)="controller(0)">{{ board[0] }}</div>
+  <div id="t" class="tdarkmode" (click)="controller(1)">{{ board[1] }}</div>
+  <div id="tr" class="trdarkmode" (click)="controller(2)">{{ board[2] }}</div>
+  <div id="cl" class="cldarkmode" (click)="controller(3)">{{ board[3] }}</div>
+  <div id="c" class="cdarkmode" (click)="controller(4)">{{ board[4] }}</div>
+  <div id="cr" class="crdarkmode" (click)="controller(5)">{{ board[5] }}</div>
+  <div id="bl" class="bldarkmode" (click)="controller(6)">{{ board[6] }}</div>
+  <div id="b" class="bdarkmode" (click)="controller(7)">{{ board[7] }}</div>
+  <div id="br" class="brdarkmode" (click)="controller(8)">{{ board[8] }}</div>
 </div>
 <div id="turnmsg">
   {{ msg }}
@@ -32,8 +32,21 @@
   title="Start a new game"
 />
 
+<div style="position: absolute; top: 25px; font-size: 25px;">Multiplayer</div>
+<div class="mode-switch-wrapper">
+  <label class="mode-switch" for="isCheckBox">
+    <input type="checkbox" id="isCheckBox" (change)="mode($event)" />
+    <div class="slider round"></div>
+  </label>
+</div>
+<div style="position: absolute; top: 25px; left:13%;font-size: 25px;">
+  Singleplayer
+</div>
+
+<br />
+
 <div class="scoreboard">
-  <h1>Score</h1>
+  <h1>Score:</h1>
   <div class="xscore">Player X:{{ xscore }}</div>
   <div class="tiescore">Tie: {{ tiescore }}</div>
   <div class="oscore">Player O:{{ oscore }}</div>

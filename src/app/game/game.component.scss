@@ -211,3 +211,70 @@ $lightborder-bottom: solid black 4px;
   background-image: linear-gradient(to bottom, #0052cc, #4c00e6);
   text-decoration: none;
 }
+
+.mode-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 8.7%;
+}
+em {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.mode-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.mode-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.scoreboard {
+  position: absolute;
+  top: 15%;
+  font-size: 25px;
+}
