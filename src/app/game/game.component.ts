@@ -57,8 +57,8 @@ export class GameComponent implements OnInit {
       this.turn = this.turn + 1;
       this.msg = "Player O's turn";
       this.incrementcount();
-      this.filltwocomp(cell);
       this.checkwin();
+      if (this.winflag == -1) this.filltwocomp(cell);
     }
   }
 
