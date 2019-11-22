@@ -1,13 +1,67 @@
 <div class="board">
-  <div id="tl" class="tldarkmode" (click)="controller(0)">{{ board[0] }}</div>
-  <div id="t" class="tdarkmode" (click)="controller(1)">{{ board[1] }}</div>
-  <div id="tr" class="trdarkmode" (click)="controller(2)">{{ board[2] }}</div>
-  <div id="cl" class="cldarkmode" (click)="controller(3)">{{ board[3] }}</div>
-  <div id="c" class="cdarkmode" (click)="controller(4)">{{ board[4] }}</div>
-  <div id="cr" class="crdarkmode" (click)="controller(5)">{{ board[5] }}</div>
-  <div id="bl" class="bldarkmode" (click)="controller(6)">{{ board[6] }}</div>
-  <div id="b" class="bdarkmode" (click)="controller(7)">{{ board[7] }}</div>
-  <div id="br" class="brdarkmode" (click)="controller(8)">{{ board[8] }}</div>
+  <div
+    id="tl"
+    [ngClass]="darktheme ? 'tldarkmode' : 'tllightmode'"
+    (click)="controller(0)"
+  >
+    {{ board[0] }}
+  </div>
+  <div
+    id="t"
+    [ngClass]="darktheme ? 'tdarkmode' : 'tlightmode'"
+    (click)="controller(1)"
+  >
+    {{ board[1] }}
+  </div>
+  <div
+    id="tr"
+    [ngClass]="darktheme ? 'trdarkmode' : 'trlightmode'"
+    (click)="controller(2)"
+  >
+    {{ board[2] }}
+  </div>
+  <div
+    id="cl"
+    [ngClass]="darktheme ? 'cldarkmode' : 'cllightmode'"
+    (click)="controller(3)"
+  >
+    {{ board[3] }}
+  </div>
+  <div
+    id="c"
+    [ngClass]="darktheme ? 'cdarkmode' : 'clightmode'"
+    (click)="controller(4)"
+  >
+    {{ board[4] }}
+  </div>
+  <div
+    id="cr"
+    [ngClass]="darktheme ? 'crdarkmode' : 'crlightmode'"
+    (click)="controller(5)"
+  >
+    {{ board[5] }}
+  </div>
+  <div
+    id="bl"
+    [ngClass]="darktheme ? 'bldarkmode' : 'bllightmode'"
+    (click)="controller(6)"
+  >
+    {{ board[6] }}
+  </div>
+  <div
+    id="b"
+    [ngClass]="darktheme ? 'bdarkmode' : 'blightmode'"
+    (click)="controller(7)"
+  >
+    {{ board[7] }}
+  </div>
+  <div
+    id="br"
+    [ngClass]="darktheme ? 'brdarkmode' : 'brlightmode'"
+    (click)="controller(8)"
+  >
+    {{ board[8] }}
+  </div>
 </div>
 <div id="turnmsg">
   {{ msg }}

@@ -13,10 +13,12 @@ export class GameComponent implements OnInit {
 
   public turn: number = 1;
   public count: number = 0;
-  public winflag: number = -1;
 
+  public winflag: number = -1;
   public msg: string = "";
+
   public buttonvalue = "🌞";
+  public darktheme: boolean = true;
 
   public xscore: number = 0;
   public tiescore: number = 0;
@@ -167,38 +169,7 @@ export class GameComponent implements OnInit {
     var currentClass = body.className;
     body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
 
-    var tl = document.getElementById("tl");
-    var currentClasstl = tl.className;
-    tl.className =
-      currentClasstl == "tldarkmode" ? "tllightmode" : "tldarkmode";
-
-    var tr = document.getElementById("tr");
-    var currentClasstr = tr.className;
-    tr.className =
-      currentClasstr == "trdarkmode" ? "trlightmode" : "trdarkmode";
-
-    var cl = document.getElementById("cl");
-    var currentClasscl = cl.className;
-    cl.className =
-      currentClasscl == "cldarkmode" ? "cllightmode" : "cldarkmode";
-
-    var c = document.getElementById("c");
-    var currentClassc = c.className;
-    c.className = currentClassc == "cdarkmode" ? "clightmode" : "cdarkmode";
-
-    var cr = document.getElementById("cr");
-    var currentClasscr = cr.className;
-    cr.className =
-      currentClasscr == "crdarkmode" ? "crlightmode" : "crdarkmode";
-
-    var b = document.getElementById("b");
-    var currentClassb = b.className;
-    b.className = currentClassb == "bdarkmode" ? "blightmode" : "bdarkmode";
-
-    var br = document.getElementById("br");
-    var currentClassbr = br.className;
-    br.className =
-      currentClassbr == "brdarkmode" ? "brlightmode" : "brdarkmode";
+    this.darktheme = !this.darktheme;
 
     if (this.buttonvalue == "🌞") {
       this.buttonvalue = "🌛";
