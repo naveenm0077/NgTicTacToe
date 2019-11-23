@@ -15,7 +15,7 @@ export class GameComponent implements OnInit {
   public count: number = 0;
 
   public winflag: number = -1;
-  public msg: string = "";
+  public msg: string = null;
 
   public buttonvalue = "🌞";
   public darktheme: boolean = true;
@@ -25,21 +25,21 @@ export class GameComponent implements OnInit {
   public oscore: number = 0;
   public scoreflag: number = 0;
 
-  public board: any = ["", "", "", "", "", "", "", "", ""];
+  public board: any = [];
 
-  public singleplayer: number = 0;
+  public numofplayers: number = 2;
   public cellsleft = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   mode(e: any) {
     if (e.target.checked) {
-      this.singleplayer = 1;
+      this.numofplayers = 1;
       this.scoreflag = 0;
       this.xscore = 0;
       this.oscore = 0;
       this.tiescore = 0;
       this.newgame();
     } else {
-      this.singleplayer = 0;
+      this.numofplayers = 2;
       this.scoreflag = 0;
       this.xscore = 0;
       this.oscore = 0;
@@ -49,12 +49,12 @@ export class GameComponent implements OnInit {
   }
 
   controller(cell: number) {
-    if (this.singleplayer == 0) this.filltwo(cell);
+    if (this.numofplayers == 2) this.filltwo(cell);
     else this.fillone(cell);
   }
 
   fillone(cell: number) {
-    if (this.turn == 1 && this.winflag == -1 && this.board[cell] == "") {
+    if (this.turn == 1 && this.winflag == -1 && this.board[cell] == null) {
       this.board[cell] = "X";
       this.turn = this.turn + 1;
       this.msg = "Player O's turn";
@@ -88,12 +88,12 @@ export class GameComponent implements OnInit {
   }
 
   filltwo(cell: number) {
-    if (this.turn == 1 && this.winflag == -1 && this.board[cell] == "") {
+    if (this.turn == 1 && this.winflag == -1 && this.board[cell] == null) {
       this.board[cell] = "X";
       this.turn = this.turn + 1;
       this.msg = "Player O's turn";
       this.incrementcount();
-    } else if (this.winflag == -1 && this.board[cell] == "") {
+    } else if (this.winflag == -1 && this.board[cell] == null) {
       this.board[cell] = "O";
       this.turn = this.turn - 1;
       this.msg = "Player X's turn";
@@ -149,18 +149,15 @@ export class GameComponent implements OnInit {
     if (this.winflag == 1) this.xscore = this.xscore + 1;
     else if (this.winflag == 2) this.oscore = this.oscore + 1;
     else if (this.winflag == 0) this.tiescore = this.tiescore + 1;
-    else return;
   }
 
   newgame() {
     this.turn = 1;
-    this.msg = "";
+    this.msg = null;
     this.count = 0;
-    this.board[0] = this.board[1] = this.board[2] = this.board[3] = this.board[4] = this.board[5] = this.board[6] = this.board[7] = this.board[8] =
-      "";
+    this.board = [];
     this.winflag = -1;
     this.scoreflag = 0;
-
     this.cellsleft = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   }
 
